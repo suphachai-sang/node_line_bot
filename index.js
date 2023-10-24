@@ -10,7 +10,7 @@ const lineConfig = {
     channelAccessToken: env.ACCESS_TOKEN,
     channelSecret: env.SECRET_TOKEN
 }
-//create client
+//create client 1  234355
 //const client = new line.Client(lineConfig);
 
 const client = new line.messagingApi.MessagingApiClient({
