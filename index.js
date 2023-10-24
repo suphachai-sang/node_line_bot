@@ -32,9 +32,8 @@ function handleEvent(event) {
     if (event.type !== 'message' || event.message.type !== 'text') {
       return Promise.resolve(null);
     }
-  
-    const echo = { type: 'text', text: event.message.text };
-  
+
+    const echo = { type: 'text', text: event.message.text };  
     return client.replyMessage({
       replyToken: event.replyToken,
       messages: [echo],
