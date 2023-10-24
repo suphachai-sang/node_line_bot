@@ -10,13 +10,16 @@ const lineConfig = {
     channelAccessToken: env.ACCESS_TOKEN,
     channelSecret: env.SECRET_TOKEN
 }
-//create client 1  234355
+//create client 1  234355 ok
 //const client = new line.Client(lineConfig);
 
 const client = new line.messagingApi.MessagingApiClient({
     channelAccessToken: env.ACCESS_TOKEN
   });
   
+app.get('/test',async (req ,res) =>{
+  res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+});
 
 app.post('/webhook', line.middleware(lineConfig), async (req, res) => {
     Promise
