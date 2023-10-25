@@ -3,13 +3,15 @@
 const line = require('@line/bot-sdk');
 const { join } = require("path");
 const { readFileSync } = require("fs");
+const dotenv = require('dotenv')
+const env = dotenv.config().parsed
 
 // create LINE SDK client
 const client = new line.messagingApi.MessagingApiClient({
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelAccessToken: env.ACCESS_TOKEN,
 });
 const blobClient = new line.messagingApi.MessagingApiBlobClient({
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelAccessToken: env.ACCESS_TOKEN,
 });
 
 const richMenuObjectA = () => ({
